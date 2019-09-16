@@ -8,15 +8,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'home.html')
 
 def about(request):
     return render(request, 'about.html')
-
-
-
-
-
 
 
 def signup(request):
