@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="title is-2">Name of Organization</h1>
+<h1 class="title is-2">{{organization.name}}</h1>
 <section>
     <div class="container is-fluid">    
         <div class="tile is-ancestor">
@@ -9,9 +9,9 @@
             </div>
             <div class="tile is-parent">
                 <ul class="tile is-child box">
-                    <li>Address: </li>
-                    <li>Phone Number: </li>
-                    <li><a>Website</a></li>
+                    <li>Address: {{organization.address}}</li>
+                    <li>Phone Number: {{organization.phonenum}}</li>
+                    <li><a>Email: {{organization.email}}</a></li>
                 </ul>
             </div>
         </div> 
