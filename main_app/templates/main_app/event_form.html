@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if object %}
+    <h2>Edit {{object.name}}'s Details</h2>
+    {% else %}
+    <h2>Add new event</h2>
+{% endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        <tbody>
+            {{ form.as_table }}
+        </tbody>
+    </table>
+    <input type="submit" value="Submit!" class="btn">
+</form>
+
+{% endblock %}
