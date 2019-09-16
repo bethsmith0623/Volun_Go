@@ -12,7 +12,14 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
+    
+def events_index(request):
+    events = Event.objects.all()
+    return render(request, 'events/index.html', {'events': events})
 
+def events_detail(request, cat_id):
+  event = Event.objects.get(id=event_id)
+  return render(request, 'events/evt-detail.html', { 'event': event })
 
 
 
@@ -35,7 +42,7 @@ def signup(request):
 
         form = UserCreationForm()
         context = {'form': form, 'error_message': error_message}
-        return render(request, 'registration/singup.html', context)
+        return render(request, 'registration/signup.html', context)
 
 
 
