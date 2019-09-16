@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="title is-2">Event Details</h1>
+
+<h1 class="title is-2">{{event.title}}'s Details</h1>
 <section>
     <div class="container is-fluid">    
         <div class="tile is-ancestor">
@@ -9,11 +10,21 @@
             </div>
             <div class="tile is-parent">
                 <ul class="tile is-child box">
+<<<<<<< HEAD
                     <li>Date: {{event.date}} </li>
                     <li>Time: {{event.time}} </li>
                     <li>Address: {{event.description}} </li>
                     <li>Details: {{event.details}} </li>
                     <li>User: {{event.user}} </li>
+=======
+                    <li>Description: {{event.description}}</li>
+                    <li>Address: {{event.location}}</li>
+                    <li>Date: {{event.date}}</li>
+                    <li>Time: {{event.time}}</li>
+                    <li>Person to Contact: </li>
+                    <li>Hours to be Earned: </li>
+                    <li>Organization hosting:</li>
+>>>>>>> 27330378fb6da371a0c18ae934f1065cef5bc684
                 </ul>
             </div>
                 <div class="tile is-child box">
@@ -27,7 +38,7 @@
 <section>
     <div>
         <form action="POST">
-        <a class="button is-info">Add to My Volun-Go!</a>
+        <a href="../../accounts/" class="button is-info">Add to My Volun-Go!</a>
         </form>
     </div>
 </section>

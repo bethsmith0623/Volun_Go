@@ -17,13 +17,13 @@ def events_index(request):
     events = Event.objects.all()
     return render(request, 'events/index.html', {'events': events})
 
-def events_detail(request, cat_id):
+def events_detail(request, event_id):
   event = Event.objects.get(id=event_id)
   return render(request, 'events/evt-detail.html', { 'event': event })
 
-  def orgs_index(request):
-      orgs = Organization.objects.all()
-      return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
+ def orgs_index(request):
+    orgs = Organization.objects.all()
+    return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
 
 def signup(request):
     error_message = ''
@@ -40,4 +40,7 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
-
+class EventCreate(CreateView):
+    model = Event
+    fields = '__all__'
+    success_url = '/events/'

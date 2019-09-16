@@ -2,5 +2,16 @@
 {% block content %}
 <h1 class="title is-2">Event Index</h1>
 
+{% for event in events %}
+    <div class="card">
+        <a href="{% url 'detail' event.id %}">
+            <span class="card-title">{{event.title}}</span>
+            <p>Description: {{event.description}}</p>
+            <p>Location: {{event.location}}</p>
+            <p>Date: {{event.date}}</p>
+            <p>Time: {{event.time}}</p>
+        </a>
+        {% endfor %}
+    </div>
 
 {% endblock %}
