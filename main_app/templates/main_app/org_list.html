@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="title is-2">Organization Details</h1>
+{% for event in events %}
+<section>
+    <div class="container is-fluid">    
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-4">   
+                <div class="tile is-parent">
+                    <div class="tile is-child box">
+                        <div>
+                            <h4 class="title is-4"><a href="{% url 'org_detail' organization.id %}">{{organizaion.name}}</a></h4>
+                        </div>
+                        <ul>
+                            <li>Address: {{organization.address}} </li>
+                            <li>Email: {{organization.email}} </li>
+                            <li>Phone Number: {{organization.phonenum}} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</section>
+    <br>
+{% endfor %}
+<br>
+{% endblock %}

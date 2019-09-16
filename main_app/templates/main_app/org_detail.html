@@ -1,21 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="title is-2">{{organization.name}}</h1>
+
+<h1 class="title is-2">{{organization.name}} Details</h1>
 <section>
     <div class="container is-fluid">    
         <div class="tile is-ancestor">
-            <div class="tile is-parent is-4">
-                <a class="tile is-child box" href="#"></a>
-            </div>
-            <div class="tile is-parent">
-                <ul class="tile is-child box">
-                    <li>Address: {{organization.address}}</li>
-                    <li>Phone Number: {{organization.phonenum}}</li>
-                    <li><a>Email: {{organization.email}}</a></li>
-                </ul>
-            </div>
-        </div> 
+            <div class="tile is-parent is-4">   
+                <div class="tile is-parent">
+                    <div class="tile is-child box">
+                        <h4 class="title is-4"> {{organization.name}} </h4>
+                        <ul>
+                            <li>Address: {{organization.address}} </li>
+                            <li>Email: {{organization.email}} </li>
+                            <li>Phone Number: {{organization.phonenum}} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+        </div>
     </div>
 </section>
+    <br>
 
 {% endblock %}
+
