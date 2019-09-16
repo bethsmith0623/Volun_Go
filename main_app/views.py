@@ -12,6 +12,9 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def account_detail(request):
+    return render (request, 'accounts.html') 
     
 def events_index(request):
     events = Event.objects.all()
