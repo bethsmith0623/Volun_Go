@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="title is-2">Event Details</h1>
+
+<h1 class="title is-2">{{event.title}}'s Details</h1>
 <section>
     <div class="container is-fluid">    
         <div class="tile is-ancestor">
@@ -9,8 +10,10 @@
             </div>
             <div class="tile is-parent">
                 <ul class="tile is-child box">
-                    <li>Date: </li>
-                    <li>Time: </li>
+                    <li>Description: {{event.description}}</li>
+                    <li>Location: {{event.location}}</li>
+                    <li>Date: {{event.date}}</li>
+                    <li>Time: {{event.time}}</li>
                     <li>Address: </li>
                     <li>Person to Contact: </li>
                     <li>Hours to be Earned: </li>

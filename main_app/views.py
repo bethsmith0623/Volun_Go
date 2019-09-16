@@ -18,7 +18,7 @@ def events_index(request):
     return render(request, 'events/index.html', {'events': events})
 
 
-def events_detail(request, cat_id):
+def events_detail(request, event_id):
   event = Event.objects.get(id=event_id)
   return render(request, 'events/evt-detail.html', { 'event': event })
 
