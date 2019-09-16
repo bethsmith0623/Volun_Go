@@ -21,23 +21,23 @@ def events_detail(request, cat_id):
   event = Event.objects.get(id=event_id)
   return render(request, 'events/evt-detail.html', { 'event': event })
 
+  def orgs_index(request):
+      orgs = Organization.objects.all()
+      return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
-
         form = UserCreationForm(request.POST)
         if form.is_valid():
-
             user = form.save()
-
             login(request, user)
             return redirect('index')
         else:
             error_message = 'Invalid sign up - try again'
-
-        form = UserCreationForm()
-        context = {'form': form, 'error_message': error_message}
-        return render(request, 'registration/signup.html', context)
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
 
 
 
