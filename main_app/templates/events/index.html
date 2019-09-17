@@ -3,24 +3,17 @@
 <h1 class="title is-2">Event Index</h1>
 
 {% for event in events %}
-<section>
-    <div class="container is-fluid">    
-        <div class="tile is-ancestor">
-            <div class="tile is-parent is-4">
-                <a class="tile is-child box" href="{% url 'detail' event.id %}">{{ event.title }}</a>
-            </div>
-            <div class="tile is-parent">
-                <ul class="tile is-child box">
-                    <li>Description: {{event.description}}</li>
-                    <li>Location: {{event.location}}</li>
-                    <li>Date: {{event.date}}</li>
-                    <li>Duration: {{event.duration}}</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
 
+<div class="container is-fluid">
+    <a href="{% url 'detail' event.id %}">
+        <span class="card-title">{{event.title}}</span>
+        <p>Description: {{event.description}}</p>
+        <p>Location: {{event.location}}</p>
+        <p>Date: {{event.date}}</p>
+        <p>Duration: {{event.duration}}</p>
+    </a>
+</div>
+<br>
                 
 {% endfor %}
 {% endblock %}
