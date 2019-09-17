@@ -9,7 +9,7 @@ class Event(models.Model):
     location = models.CharField(max_length=100)
     date = models.DateField()
     duration = models.FloatField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.title 
