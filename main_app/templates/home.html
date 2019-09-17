@@ -1,59 +1,5 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Volun-Go!</title>
-    <link rel="stylesheet"type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
-  <body>
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container">
-            <img id="logo" src="vg-logo.png" alt="Logo">
-            <h1 class="title has-text-white">
-                Volun-Go!
-            </h1>
-            <h2 class="subtitle has-text-white">
-                A place to find ways to serve your community!
-            </h2>
-            </div>
-        </div>
-    <div class="hero-foot">
-            <nav class="tabs is-boxed is-fullwidth">
-              <div class="container">
-                <ul>
-                  <li>
-                    <a href="/" class="has-text-white">Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'about' %}" class="has-text-white">About</a>
-                </li>
-                  {% if user.is_authenticated %}
-                  <li>
-                    <a href="/" class="has-text-white">My Volun-Go!</a>
-                  </li>
-                  <li>
-                    <a href="/" class="has-text-white">All Events</a>
-                  </li>
-                  <li>
-                    <a href="/" class="has-text-white">All Organizations</a>
-                  </li>
-                  {% else %}
-                  <li>
-                    <a href="{% url 'signup' %}" class="has-text-white">Sign Up</a>
-                    <a href="{% url 'login' %}" class="has-text-white">Log In</a>
-                  </li>
-                  {% endif %}
-                </ul>
-              </div>
-            </nav>
-          </div>
-    </section>
+{% extends 'base.html' %}
+{% block content %}
   <section class="section">
     <div class="container">
       <h1 class="title">
@@ -65,27 +11,4 @@
     </div>
   </section>
 <br>
-<main class="container">
-    {% block content %}
-    {% endblock %}
-</main>
-<footer>
-  <section class="hero">
-  <div class="hero-foot">
-        <nav class="tabs is-boxed is-fullwidth">
-          <div class="container">
-            <ul>
-              <li>
-                <a class="has-text-white">FAQs</a>
-              </li>
-              <li>
-                <a class="has-text-white">Contact Us!</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </section>
-</footer>
-  </body>
-</html>
+{% endblock %}
