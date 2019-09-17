@@ -16,6 +16,9 @@ def about(request):
 def faqs(request):
     return render(request, 'faqs.html')
 
+def contact(request):
+    return render(request, 'contact.html')
+
 def add_event(request, user_id, event_id):
     User.objects.get(id=user_id).event.add(event_id)
     return redirect('detail', user_id=user_id)
