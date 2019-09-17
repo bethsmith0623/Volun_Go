@@ -21,8 +21,8 @@ def events_index(request):
     return render(request, 'events/index.html', {'events': events})
 
 def events_detail(request, event_id):
-  event = Event.objects.get(id=event_id)
-  return render(request, 'events/evt-detail.html', { 'event': event })
+    event = Event.objects.get(id=event_id)
+    return render(request, 'events/evt-detail.html', { 'event': event })
 
 def orgs_index(request):
    orgs = Organization.objects.all()
@@ -41,7 +41,6 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
-
 
 class EventCreate(CreateView):
     model = Event
