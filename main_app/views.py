@@ -25,8 +25,8 @@ def events_detail(request, event_id):
     return render(request, 'events/evt-detail.html', { 'event': event })
 
 def orgs_index(request):
-    orgs = Organization.objects.all()
-    return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
+   orgs = Organization.objects.all()
+   return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
 
 def signup(request):
     error_message = ''
@@ -42,8 +42,15 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-
 class EventCreate(CreateView):
     model = Event
-    fields = '__all__'
+    fields = ['title','description','location','date','duration']
+    success_url = '/events/'
+
+class EventUpdate(UpdateView):
+    model = Event
+    fields = ['description','location','date','duration']
+
+class EventDelete(DeleteView):
+    model = Event
     success_url = '/events/'
