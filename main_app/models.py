@@ -15,7 +15,7 @@ class Event(models.Model):
         return self.title 
 
     def get_absolute_url(self):
-        return reverse('evt-detail', kwargs={'event_id': self.id})
+        return reverse('detail', kwargs={'event_id': self.id})
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

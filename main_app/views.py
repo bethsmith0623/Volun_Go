@@ -22,7 +22,7 @@ def events_index(request):
 
 def events_detail(request, event_id):
     event = Event.objects.get(id=event_id)
-    return render(request, 'events/evt-detail.html', { 'event': event })
+    return render(request, 'events/detail.html', { 'event': event })
 
 def orgs_index(request):
    orgs = Organization.objects.all()
