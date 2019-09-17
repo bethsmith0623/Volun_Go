@@ -18,9 +18,9 @@ class Event(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'event_id': self.id})
 
-class Profile(models.Model):
-   user = models.OneToOneField(User, on_delete=models.CASCADE)
-   events_attending = models.ManyToManyField(Event)
+# class Profile(models.Model):
+#    user = models.OneToOneField(User, on_delete=models.CASCADE)
+#    events_attending = models.ManyToManyField(Event)
 
 class Organization(models.Model):
     name = models.CharField(max_length=100)
