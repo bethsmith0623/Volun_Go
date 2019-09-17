@@ -25,20 +25,15 @@
     </div>
 </section>
     <br>
-<section>
-    <div>
-        {% if events.count %}
-            {% for event in events.all %}
-        <!-- <form action="{% url 'add_event' user.id event.id %}" method="POST">
-            {% csrf_token %}
-        <button type="submit" class="button is-info">Add to My Volun-Go!</button>
-        </form> -->
-        <form action="POST">
-            <a class="button is-info">Add to My Volun-Go!</a>
-        </form>
-        {% endfor %}
-    {% endif %}
-    </div>
-</section>
+{% for event in events %}
+    <section>
+        <div>
+            <form action="POST">
+                {% csrf_token %}
+                <a href="{% url 'add_event' user.id event.id %}" class="button is-info">Add to My Volun-Go!</a>
+            </form>
+        </div>
+    </section>
+{% endfor %}
 
 {% endblock %}
