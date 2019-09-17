@@ -4,4 +4,16 @@
 
 <h1 class="title is-1">My Volun-Go!</h1>
 
+{% for event in events %}
+
+<div class="container is-fluid">
+    <a href="{% url 'detail' event.id %}">
+        <span class="card-title">{{event.title}}</span>
+        <p>Description: {{event.description}}</p>
+        <p>Location: {{event.location}}</p>
+        <p>Date: {{event.date}}</p>
+        <p>Duration: {{event.duration}}</p>
+    </a>
+</div>
+<br>
 {% endblock %}
