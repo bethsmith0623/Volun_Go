@@ -27,9 +27,9 @@
     <br>
     <section>
         <div>
-            <form action="POST">
-                {% csrf_token %}
-                <a href="../../accounts/" class="button is-info">Add to My Volun-Go!</a>
+            <form action="{% url 'add_event' user.id event.id %}" method="post">
+                    {% csrf_token %}
+                <button type="submit" class="button is-info">Add to My Volun-Go!</button>
             </form>
         </div>
     </section>
