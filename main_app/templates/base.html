@@ -35,10 +35,13 @@
                 </li>
                   {% if user.is_authenticated %}
                   <li>
-                    <a href="accounts/" class="has-text-white">My Volun-Go!</a>
+                    <a href="{% url 'accounts' %}" class="has-text-white">My Volun-Go!</a>
                   </li>
                   <li>
                     <a href="{% url 'index' %}" class="has-text-white">All Events</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'events_create' %}" class="has-text-white">Add Event</a>
                   </li>
                   <li>
                      <a href="" class="has-text-white">All Organizations</a> 
@@ -57,16 +60,6 @@
             </nav>
           </div>
     </section>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-       Welcome!
-      </h1>
-      <p class="subtitle">
-        Sign up to access our site!
-      </p>
-    </div>
-  </section>
 <br>
 <main class="container">
     {% block content %}
@@ -79,10 +72,10 @@
           <div class="container">
             <ul>
               <li>
-                <a class="has-text-white">FAQs</a>
+                <a href="{% url 'faqs' %}" class="has-text-white">FAQs</a>
               </li>
               <li>
-                <a class="has-text-white">Contact Us!</a>
+                <a href="{% url 'contact' %}" class="has-text-white">Contact Us!</a>
               </li>
             </ul>
           </div>

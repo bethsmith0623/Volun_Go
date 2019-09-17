@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="title is-2">{{event.title}}'s Details</h1>
+<section>
+    <div class="container is-fluid">    
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-4">
+                <a class="tile is-child box" href="#"></a>
+            </div>
+            <div class="tile is-parent">
+                <ul class="tile is-child box">
+                    <li>Description: {{event.description}}</li>
+                    <li>Address: {{event.location}}</li>
+                    <li>Date: {{event.date}}</li>
+                    <li>Hours to be Earned: {{event.duration}} </li>
+                    <li>Organization hosting:</li>
+                </ul>
+            </div>
+                <div class="tile is-child box">
+                    <a href="{% url 'events_update' event.id %}">Edit</a>
+                    <a href="{% url 'events_delete' event.id %}">Delete</a>
+                </div>
+        </div> 
+    </div>
+</section>
+    <br>
+    <section>
+        <div>
+            <form action="POST">
+                {% csrf_token %}
+                <a href="../../accounts/" class="button is-info">Add to My Volun-Go!</a>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}
