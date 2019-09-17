@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div class="container is-fluid">
 {% if object %}
     <h2>Edit {{object.name}}'s Details</h2>
     {% else %}
@@ -16,5 +16,6 @@
     </table>
     <input type="submit" value="Submit!" class="btn">
 </form>
+</div>
 
 {% endblock %}
