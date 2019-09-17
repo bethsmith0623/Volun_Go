@@ -27,9 +27,17 @@
     <br>
 <section>
     <div>
+        {% if events.count %}
+            {% for event in events.all %}
+        <!-- <form action="{% url 'add_event' user.id event.id %}" method="POST">
+            {% csrf_token %}
+        <button type="submit" class="button is-info">Add to My Volun-Go!</button>
+        </form> -->
         <form action="POST">
-        <a href="../../accounts/" class="button is-info">Add to My Volun-Go!</a>
+            <a class="button is-info">Add to My Volun-Go!</a>
         </form>
+        {% endfor %}
+    {% endif %}
     </div>
 </section>
 

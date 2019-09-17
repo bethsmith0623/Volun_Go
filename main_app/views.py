@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Event, Organization
+from .models import Event, Organization, User
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -13,7 +13,12 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+def add_event(request, user_id, event_id):
+    User.objects.get(id=user_id).events.add(event_id)
+    return redirect('detail', user_id=user_id)
+
 def account_detail(request):
+    
     return render (request, 'accounts.html') 
     
 def events_index(request):
