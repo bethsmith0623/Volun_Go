@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="title is-2">Event Details</h1>
+
+<h1 class="title is-2">{{event.title}}'s Details</h1>
 <section>
     <div class="container is-fluid">    
         <div class="tile is-ancestor">
@@ -27,7 +28,7 @@
 <section>
     <div>
         <form action="POST">
-        <a class="button is-info">Add to My Volun-Go!</a>
+        <a href="../../accounts/" class="button is-info">Add to My Volun-Go!</a>
         </form>
     </div>
 </section>
