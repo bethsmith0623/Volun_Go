@@ -35,7 +35,7 @@
                 </li>
                   {% if user.is_authenticated %}
                   <li>
-                    <a href="accounts/" class="has-text-white">My Volun-Go!</a>
+                    <a href="{% url 'accounts' %}" class="has-text-white">My Volun-Go!</a>
                   </li>
                   <li>
                     <a href="{% url 'index' %}" class="has-text-white">All Events</a>
