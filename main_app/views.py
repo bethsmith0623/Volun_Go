@@ -13,13 +13,15 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-def add_event(request, user_id, event_id):
-    User.objects.get(id=user_id).event.add(event_id)
-    return redirect('detail', user_id=user_id)
+def faqs(request):
+    return render(request, 'faqs.html')
+
+def contact(request):
+    return render(request, 'contact.html')
 
 def account_detail(request):
-    
-    return render (request, 'accounts.html') 
+    events = Event.objects.filter(user=request.user)
+    return render (request, 'accounts.html', {'events': events}) 
     
 def events_index(request):
     events = Event.objects.all()
@@ -51,6 +53,11 @@ class EventCreate(CreateView):
     model = Event
     fields = ['title','description','location','date','duration']
     success_url = '/events/'
+
+    def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class EventUpdate(UpdateView):
     model = Event
