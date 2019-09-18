@@ -3,15 +3,19 @@
 <h1 class="title is-2">Event Index</h1>
 
 {% for event in events %}
-
-<div class="container is-fluid">
-    <a href="{% url 'detail' event.id %}">
-        <span class="card-title">{{event.title}}</span>
-        <p>Description: {{event.description}}</p>
-        <p>Location: {{event.location}}</p>
-        <p>Date: {{event.date}}</p>
-        <p>Duration: {{event.duration}}</p>
-    </a>
+<div class="row">
+    <div class="col s6 m6">
+        <div class="card deep-purple">
+            <div class="card-content white-text">
+                <a href="{% url 'detail' event.id %}">
+                <span class="card-title yellow-text">{{event.title}}</span></a>
+                <p>Description: {{event.description}}</p>
+                <p>Location: {{event.location}}</p>
+                <p>Date: {{event.date}}</p>
+                <p>Duration: {{event.duration}} hours</p>
+            </div>
+        </div>
+    </div>
 </div>
 <br>
                 
