@@ -1,8 +1,19 @@
-.hero {
-    background-color: blueviolet;
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url(https://imgur.com/cpLl1LK);
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+
+.brand-logo {
+    font-family: 'Monoton', cursive;
 }
 
-#logo {
-    background-size: cover;
-    width: 152px;
+#links, #footer-nav, #mobile-links {
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
 }
