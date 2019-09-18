@@ -27,10 +27,9 @@
     <br>
     <section>
         <div>
-            <form action"{% url 'eventattend' event.id %}" method="POST">
+            <form action="{% url 'event_attend' event.id %}" method="POST">
                 {% csrf_token %}
-                {{ eventattend.as_p }}
-                 <input type="submit" class="button" value="Add to My Volun-Go!">
+                 <input type="submit" class="btn" value="Add to My Volun-Go!">
             </form>
         </div>
     </section>
