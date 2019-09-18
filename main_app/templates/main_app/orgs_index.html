@@ -5,14 +5,18 @@
 <h1 class="title is-2">Organization Index</h1>
 
     {% for org in orgs %}
-
-        <div class="container is-fluid">
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card deep-purple">
+            <div class="card-content white-text">
                 <span class="card-title">{{org.name}}</span>
                 <p><i>Address:</i> {{org.address}}</p>
                 <p><i>Website:</i> {{org.website}}</p>
                 <p><i>Phone:</i> {{org.phonenum}}</p>
-            </a>
+            </div>
         </div>
+    </div>
+</div>
         <br>
                         
     {% endfor %}
