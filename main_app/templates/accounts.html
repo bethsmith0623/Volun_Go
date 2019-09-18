@@ -15,6 +15,23 @@
         <p>Duration: {{event.duration}}</p>
     </a>
 </div>
+<div class="container is-fluid">
+    <table class="striped">
+        <thead>
+            <th>Event</th><th>Date</th><th>Location</th>
+        </thead>
+        <tbody>
+            {% for eventattend in event.eventattent_set.all %}
+                <tr>
+                    <td>{{ eventattend.title }}</td>
+                    <td>{{ eventattend.date }}</td>
+                    <td>{{ eventattend.location }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
 <br>
 {% endfor %}
 {% endblock %}
