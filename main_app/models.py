@@ -11,16 +11,13 @@ class Event(models.Model):
     date = models.DateField()
     duration = models.FloatField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    attending = models.ManyToManyField(User, related_name='attendee')
 
     def __str__(self):
         return self.title 
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'event_id': self.id})
-
-# class Profile(models.Model):
-#    user = models.OneToOneField(User, on_delete=models.CASCADE)
-#    events_attending = models.ManyToManyField(Event)
 
 class Organization(models.Model):
     name = models.CharField(max_length=100)
