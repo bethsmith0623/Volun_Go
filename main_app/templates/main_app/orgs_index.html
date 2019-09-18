@@ -2,6 +2,18 @@
 
 {% block content %}
 
-<h1>Organization Index</h1>
+<h1 class="title is-2">Organization Index</h1>
 
+    {% for org in orgs %}
+
+        <div class="container is-fluid">
+                <span class="card-title">{{org.name}}</span>
+                <p><i>Address:</i> {{org.address}}</p>
+                <p><i>Website:</i> {{org.website}}</p>
+                <p>Phone: {{org.phonenum}}</p>
+            </a>
+        </div>
+        <br>
+                        
+    {% endfor %}
 {% endblock %}
