@@ -39,8 +39,8 @@ def events_detail(request, event_id):
     return render(request, 'events/detail.html', { 'event': event })
 
 def orgs_index(request):
-   orgs = Organization.objects.all()
-   return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
+    orgs = Organization.objects.all()
+    return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
 
 def signup(request):
     error_message = ''
