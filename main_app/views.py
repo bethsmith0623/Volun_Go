@@ -3,6 +3,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Event, Organization, User
 from django.contrib.auth import login
+from django.contrib.auth.models import User
+from .forms import EventAttendForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -21,8 +23,13 @@ def contact(request):
 
 def account_detail(request):
     events = Event.objects.filter(user=request.user)
-    return render (request, 'accounts.html', {'events': events}) 
+    event_attend = User.objects.get(id=request.user.id).attendee.all()
+    return render (request, 'accounts.html',{'event_attend': event_attend, 'events': events}) 
     
+def event_attend(request, event_id):
+    Event.objects.get(id=event_id).attending.add(request.user)
+    return redirect('accounts')
+
 def events_index(request):
     events = Event.objects.all()
     return render(request, 'events/index.html', {'events': events})
@@ -32,8 +39,8 @@ def events_detail(request, event_id):
     return render(request, 'events/detail.html', { 'event': event })
 
 def orgs_index(request):
-   orgs = Organization.objects.all()
-   return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
+    orgs = Organization.objects.all()
+    return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
 
 def signup(request):
     error_message = ''
