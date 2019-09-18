@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Event, Organization, User
 from django.contrib.auth import login
+from .forms import EventAttendForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -21,7 +22,8 @@ def contact(request):
 
 def account_detail(request):
     events = Event.objects.filter(user=request.user)
-    return render (request, 'accounts.html', {'events': events}) 
+    eventattend = EventAttendForm()
+    return render (request, 'accounts.html',{'eventattend': eventattend} {'events': events}) 
     
 def events_index(request):
     events = Event.objects.all()
