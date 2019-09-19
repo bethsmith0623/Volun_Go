@@ -10,7 +10,7 @@ You can browse the opportunities already entered on the site and add the event t
 
 Volun-Go is the brainchild of Ruben Caceres, Michael Martinez and Beth Smith for our Python/Django project. 
 
-![](screenshot link)
+<a href="https://imgur.com/QTGSrCw"><img src="https://i.imgur.com/QTGSrCwl.png" title="source: imgur.com" /></a>
 
 
 #### Techologies used
