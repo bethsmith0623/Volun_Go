@@ -10,17 +10,17 @@
     {% for event in events %}
     <div class="col s12 m6">
         <div class="card deep-purple lighten-1">
-        <div class="card-content white-text">
-        <a id="evt-link" href="{% url 'detail' event.id %}"><span class="card-title">{{event.title}}</span></a>
-            <p>Description: {{event.description}}</p>
-            <p>Location: {{event.location}}</p>
-            <p>Date: {{event.date}}</p>
-            <p>Duration: {{event.duration}}</p>
-        </div>
+            <div class="card-content white-text">
+                <a id="evt-link" href="{% url 'detail' event.id %}"><span class="card-title">{{event.title}}</span></a>
+                <p>Description: {{event.description}}</p>
+                <p>Location: {{event.location}}</p>
+                <p>Date: {{event.date}}</p>
+                <p>Duration: {{event.duration}}</p>
+            </div>
         </div>
     </div>
     {% endfor %}
-    </div>
+</div>
 
 
 <div class="container">
