@@ -49,4 +49,9 @@ Future improvements we plan to implement include:
 
   * Keyword search bar for events and or organizations
   * Hashtag/categorical search ability for events
+  * A journal feature with the ability to add photos of events you've participated in
+  * Events vanish when the date has passed
+  * A calculation feature to track total hours for by week or month
   * Google Calendar and Maps APIs
+  * Ability to invite friends to an event you have created or one you've chosen to attend
+  * Access for organizations to add their events
