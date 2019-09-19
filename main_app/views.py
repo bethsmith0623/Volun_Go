@@ -45,7 +45,8 @@ def events_index(request):
 @login_required
 def events_detail(request, event_id):
     event = Event.objects.get(id=event_id)
-    return render(request, 'events/detail.html', { 'event': event })
+    user = request.user
+    return render(request, 'events/detail.html', { 'event': event, 'user': user })
     
 @login_required
 def orgs_index(request):
@@ -76,10 +77,10 @@ class EventCreate(LoginRequiredMixin,CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class EventUpdate(LoginRequiredMixin,UpdateView):
+class EventUpdate(LoginRequiredMixin, UpdateView):
     model = Event
     fields = ['description','location','date','duration']
 
-class EventDelete(LoginRequiredMixin,DeleteView):
+class EventDelete(LoginRequiredMixin, DeleteView):
     model = Event
     success_url = '/events/'
