@@ -8,9 +8,11 @@
     </p>
 {% endif %}
 
-<form method="post" action="{% url 'signup' %}">
+<div class="container">
+<form class="signup deep-purple darken-1" method="post" action="{% url 'signup' %}">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" class="btn" value="signup">
   </form>
+</div>
 {% endblock %}
