@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="title is-2">Event Index</h1>
+<h1 class="title is-2">All Events</h1>
 
+<div class="row">
 {% for event in events %}
-
-<div class="container is-fluid">
-    <a href="{% url 'detail' event.id %}">
-        <span class="card-title">{{event.title}}</span>
-        <p>Description: {{event.description}}</p>
-        <p>Location: {{event.location}}</p>
-        <p>Date: {{event.date}}</p>
-        <p>Duration: {{event.duration}}</p>
-    </a>
-</div>
-<br>
-                
+        <div class="col s12 m6">
+          <div class="card deep-purple lighten-1">
+            <div class="card-content white-text">
+            <a id="evt-link" href="{% url 'detail' event.id %}"><span class="card-title">{{event.title}}</span></a>
+              <p class="evt-details">Description: {{event.description}}</p>
+              <p class="evt-details">Location: {{event.location}}</p>
+              <p class="evt-details">Date: {{event.date}}</p>
+              <p class="evt-details">Duration: {{event.duration}} hours</p>
+            </div>
+          </div>
+        </div>
 {% endfor %}
+      </div>
+                
 {% endblock %}
