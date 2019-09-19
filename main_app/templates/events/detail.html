@@ -17,12 +17,21 @@
                 </ul>
             </div>
                 <div class="tile is-child box">
-                    <a href="{% url 'events_update' event.id %}">Edit</a>
-                    <a href="{% url 'events_delete' event.id %}">Delete</a>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <button class="btn waves-effect waves-light green"  type="submit" name="edit"><a href="{% url 'events_update' event.id %}">Edit
+                        </a></button>
+                        <button class="btn waves-effect waves-light red" type="submit" name="delete"><a href="{% url 'events_delete' event.id %}">Delete
+                        </a></button>
+                    </form>
                 </div>
         </div> 
     </div>
 </section>
+
+<!-- <a href="{% url 'events_update' event.id %}">Edit</a>
+<a href="{% url 'events_delete' event.id %}">Delete</a> -->
+
     <br>
     <section>
         <div>
