@@ -14,13 +14,13 @@
   <script src="{% static 'js/index.js' %}"></script>
 </head>
   <body class="mbody">
-    <header>
+  
+   <header>
       <div id="navbar" class="navbar-fixed">
       <nav class="deep-purple">
         <div class="nav-wrapper">
-          <div class="container">
             <ul>
-              <li><a href="/" class="brand-logo">Volun-Go!</a></li>
+              <li><a href="/" class="brand-logo left">Volun-Go!</a></li>
                 <a href="#" class="sidenav-trigger" data-target="mobile-links" style="float: right">
                   <i class="material-icons">menu</i>
                 </a>
@@ -40,7 +40,6 @@
                   <li><a href="{% url 'login' %}">Log In</a></li>
                 {% endif %}
             </ul>
-          </div>
         </div>
       </nav>
     </div>
@@ -58,7 +57,7 @@
           <li><a href="{% url 'login' %}">Log In</a></li>
         {% endif %}
       </ul>
-  </header>
+    </header>
   
   <main class="container">
     {% block content %}
@@ -67,13 +66,12 @@
   <br>
   <!-- footer -->
   <footer id="footer-nav" class="page-footer deep-purple">
-      <div class="footer-copyright">
-        <div class="container">
-        © 2019 Copyright Volun-Go!
-        <a href="{% url 'faqs' %}">FAQs</a>
-        <a href="{% url 'contact' %}">Contact Us!</a>
-        </div>
-      </div>
+       <p class="left">© 2019 Copyright Volun-Go!</p>
+       <p class="right">
+        <a class="footer-links" href="{% url 'faqs' %}">FAQs</a>
+        <a class="footer-links" href="{% url 'contact' %}">Contact Us!</a>
+      </p>
+      
     </footer>
   <!-- jquery script -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
