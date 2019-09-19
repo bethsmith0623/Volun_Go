@@ -6,17 +6,17 @@
 <h5>Don't see your favorite organization? 
     <a href="mailto:volungo2volunteer@gmail.com" target="_blank">Email us</a> and we will gladly
     add it!</h5>
-
-
-<div class="container">
+        
+<div class="col s12 m6">
     {% for org in orgs %}
+    <div class="card deep-purple lighten-1">
+    <div class="card-content white-text">
         <span class="card-title">{{org.name}}</span>
         <p><i>Address:</i> {{org.address}}</p>
         <p><i>Website:</i> {{org.website}}</p>
         <p><i>Phone:</i> {{org.phonenum}}</p>
-
-</div>
-        <br>
-                        
+    </div>
+    </div>
     {% endfor %}
+</div>
 {% endblock %}
