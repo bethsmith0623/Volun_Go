@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container is-fluid">
+<div class="container">
   <h1>Delete Organization</h1>
 
-  <h4 class="title is-3">Are you sure you want to delete {{ organization.name }}</span>?</h4>
+  <h4>Are you sure you want to delete {{ organization.name }}?</h4>
 
   <form action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="Yes - Delete!" class="button is-danger">
-    <a href="{% url 'org_detail' org.id %}" class="button is-light">Cancel</a>
+      <button class="btn waves-effect waves-light red" type="submit" name="delete">Yes, Delete!
+      </button>
+      <button action="{% url 'org_detail' org.id %}" class="btn waves-effect waves-light blue"  type="submit" name="cancel">Cancel
+        </button>
   </form>
 </div>
 {% endblock %}
+
+<!-- {% url 'org_detail' org.id %} -->
