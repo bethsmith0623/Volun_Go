@@ -42,7 +42,7 @@ Technologies we used for this app:
 [Volun-Go!](https://volungo.herokuapp.com/)
 
 
-#### Future Enhancements
+#### Future development
 
 
 Future improvements we plan to implement include:
