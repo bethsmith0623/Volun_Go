@@ -7,18 +7,14 @@
     <a href="mailto:volungo2volunteer@gmail.com" target="_blank">volungo2volunteer@gmail.com</a> and we will gladly
     add it!</h5>
 
+
+<div class="container">
     {% for org in orgs %}
-<div class="row">
-    <div class="col s12 m6">
-        <div class="card deep-purple">
-            <div class="card-content white-text">
-                <span class="card-title">{{org.name}}</span>
-                <p><i>Address:</i> {{org.address}}</p>
-                <p><i>Website:</i>  <a href="{{org.website}}" target="_blank">{{org.website}}</a></p>
-                <p><i>Phone:</i> {{org.phonenum}}</p>
-            </div>
-        </div>
-    </div>
+        <span class="card-title">{{org.name}}</span>
+        <p><i>Address:</i> {{org.address}}</p>
+        <p><i>Website:</i> {{org.website}}</p>
+        <p><i>Phone:</i> {{org.phonenum}}</p>
+
 </div>
         <br>
                         

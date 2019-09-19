@@ -4,7 +4,16 @@ body {
     flex-direction: column;
     background-image: url(https://i.imgur.com/8v269dM.jpg);
     background-size: cover;
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat; 
+    animation: fadeIn 0.5s linear;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  } 
   }
 
 main {
@@ -23,3 +32,24 @@ main {
     font-family: 'Luckiest Guy', cursive;
     color: white;
 }
+
+#evt-link {
+  color: #d4e157;
+  font-family: 'Anton', sans-serif;
+}
+
+.evt-details {
+  font-family: 'Voltaire', sans-serif;
+}
+
+.event th label{
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+}
+
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+}
+
+
