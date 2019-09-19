@@ -21,27 +21,34 @@ def faqs(request):
 def contact(request):
     return render(request, 'contact.html')
 
+@login_required
 def account_detail(request):
     events = Event.objects.filter(user=request.user)
     event_attend = User.objects.get(id=request.user.id).attendee.all()
     return render (request, 'accounts.html',{'event_attend': event_attend, 'events': events}) 
-    
+
+@login_required    
 def event_attend(request, event_id):
     Event.objects.get(id=event_id).attending.add(request.user)
     return redirect('accounts')
 
+@login_required
 def event_remove(request, event_id):
     Event.objects.get(id=event_id).attending.remove(request.user)
     return redirect('accounts')
 
+@login_required
 def events_index(request):
     events = Event.objects.all()
     return render(request, 'events/index.html', {'events': events})
 
+@login_required
 def events_detail(request, event_id):
     event = Event.objects.get(id=event_id)
-    return render(request, 'events/detail.html', { 'event': event })
-
+    user = request.user
+    return render(request, 'events/detail.html', { 'event': event, 'user': user })
+    
+@login_required
 def orgs_index(request):
     orgs = Organization.objects.all()
     return render(request, 'main_app/orgs_index.html', {'orgs': orgs})
@@ -60,7 +67,7 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-class EventCreate(CreateView):
+class EventCreate(LoginRequiredMixin,CreateView):
     model = Event
     fields = ['title','description','location','date','duration']
     success_url = '/events/'
@@ -70,10 +77,10 @@ class EventCreate(CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class EventUpdate(UpdateView):
+class EventUpdate(LoginRequiredMixin, UpdateView):
     model = Event
     fields = ['description','location','date','duration']
 
-class EventDelete(DeleteView):
+class EventDelete(LoginRequiredMixin, DeleteView):
     model = Event
     success_url = '/events/'

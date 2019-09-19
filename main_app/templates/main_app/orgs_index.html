@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<h1 class="title is-2">Organizations List</h1>
-<h5>Don't see the organization you want? Email us at 
-    <a href="mailto:volungo2volunteer@gmail.com" target="_blank">volungo2volunteer@gmail.com</a> and we will gladly
+<h1 class="title is-2">Organization List</h1>
+<h5>Don't see your favorite organization? 
+    <a href="mailto:volungo2volunteer@gmail.com" target="_blank">Email us</a> and we will gladly
     add it!</h5>
  
 <div class="row">
@@ -14,7 +14,7 @@
     <div class="card-content white-text">
         <span class="org-name card-title">{{org.name}}</span>
         <p class="org-info"><i>Address:</i> {{org.address}}</p>
-        <p class="org-info"><i>Website:</i> {{org.website}}</p>
+        <p class="org-info"><i>Website:</i> <a href="{{org.website}}" target="_blank">{{org.website}}</a></p>
         <p class="org-info"><i>Phone:</i> {{org.phonenum}}</p>
     </div>
     </div>
