@@ -40,11 +40,17 @@ main {
   font-family: 'Anton', sans-serif;
 }
 
-.evt-details {
+.evt-details .org-info {
   font-family: 'Voltaire', sans-serif;
 }
 
 .event th label{
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.signup label, p label {
   font-family: 'Anton', sans-serif;
   font-size: 1.5rem;
   color: white;
@@ -58,7 +64,7 @@ h1, h2, h5 {
   font-family: 'Voltaire', sans-serif;
 }
 
-.faq {
+.faq, .org-name {
   font-family: 'Anton', sans-serif;
 }
 
