@@ -30,6 +30,10 @@ def event_attend(request, event_id):
     Event.objects.get(id=event_id).attending.add(request.user)
     return redirect('accounts')
 
+def event_remove(request, event_id):
+    Event.objects.get(id=event_id).attending.remove(request.user)
+    return redirect('accounts')
+
 def events_index(request):
     events = Event.objects.all()
     return render(request, 'events/index.html', {'events': events})

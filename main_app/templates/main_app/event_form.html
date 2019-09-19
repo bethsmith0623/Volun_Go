@@ -9,13 +9,16 @@
             <h1>Add Event</h1>
         {% endif %}
 
-        <form action="" method="post">
+        <form class=" event deep-purple darken-1" action="" method="post">
             {% csrf_token %}
             <table>
             {{ form.as_table }}
             </table>
-            <input type="submit" value="Submit!" class="button is-success">
+            <button class="btn waves-effect waves-light orange" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+            </button>
         </form>
     </div>
 </div>
+
 {% endblock %}
