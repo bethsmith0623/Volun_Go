@@ -2,7 +2,10 @@
 
 {% block content %}
 
-<h1 class="title is-2">Organization Index</h1>
+<h1 class="title is-2">Organization List</h1>
+<h5>Don't see the organization you want? Email us at 
+    <a href="mailto:volungo2volunteer@gmail.com" target="_blank">volungo2volunteer@gmail.com</a> and we will gladly
+    add it!</h5>
 
 
 <div class="container">
@@ -11,8 +14,8 @@
         <p><i>Address:</i> {{org.address}}</p>
         <p><i>Website:</i> {{org.website}}</p>
         <p><i>Phone:</i> {{org.phonenum}}</p>
-    </a>
-        </div>
+
+</div>
         <br>
                         
     {% endfor %}
