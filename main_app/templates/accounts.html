@@ -7,7 +7,7 @@
         <h5>Events You're Attending:</h5>
         <table class="striped">
             <thead>
-                <th>Event</th><th>Date</th><th>Location</th>
+                <th>Event</th><th>Date</th><th>Location</th><th>Duration</th>
             </thead>
             <tbody>
                 {% for event in event_attend %}
@@ -15,6 +15,7 @@
                         <td>{{ event.title }}</td>
                         <td>{{ event.date }}</td>
                         <td>{{ event.location }}</td>
+                        <td>{{ event.duration }}</td>
                         <td><form action="{% url 'event_remove' event.id %}" method="post">
                             {% csrf_token %}
                             <button class="btn waves-effect waves-light red" type="submit" name="delete">Remove
