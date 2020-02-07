@@ -1,7 +1,11 @@
 boto3==1.9.227
 botocore==1.12.227
 dj-database-url==0.5.0
+<<<<<<< HEAD
 Django>=2.2.9
+=======
+Django==2.2.8
+>>>>>>> b9e1d142219d3e10cd844f101161aed51aac0a9b
 django-heroku==0.3.1
 django-tinymce4-lite==1.7.5
 djangorestframework-api-key==1.4.1
